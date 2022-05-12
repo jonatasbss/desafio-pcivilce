@@ -25,7 +25,7 @@ class ObjetoTipo(models.Model):
 class Arma(models.Model):
     marca_armamento = models.CharField(max_length=64, null=True, blank=True)
     modelo_armamento = models.CharField(max_length=64, null=True, blank=True)
-    quantidade_de_municao = models.IntegerField(null=True, blank=True)
+    quantidade_de_tiros = models.IntegerField(null=True, blank=True)
     valor_estimado_armamento = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     imagem = models.CharField(max_length=128, null=True, blank=True)
     calibre = models.ForeignKey('armas.Calibre', related_name='calibre_arma', on_delete=models.CASCADE)
@@ -35,7 +35,7 @@ class Arma(models.Model):
         ordering = ['marca_armamento']
 
     def __str__(self):
-        return '{} - {}'.format(self.modelo, self.marca)
+        return '{} - {}'.format(self.modelo_armamento, self.marca_armamento)
 
 
 class Municao(models.Model):
@@ -49,7 +49,7 @@ class Municao(models.Model):
         ordering = ['marca_municao']
 
     def __str__(self):
-        return '{} - {}'.format(self.modelo_municao, self.marca)
+        return '{} - {}'.format(self.modelo_municao, self.marca_municao)
 
 
 class Objeto(models.Model):
