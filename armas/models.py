@@ -58,13 +58,13 @@ class Arma(models.Model):
     
     """
 
-    def save(self, *args, **kwargs):
-        if self.id is None:
-            ot_arma, objt = ObjetoTipo.objects.get_or_create(tipo_de_objeto='arma')
-            o, obj = Objeto.objects.get_or_create(objeto_tipo=ot_arma)
-            o.save()
-            self.objeto_tipo_id = o.id
-        super(Arma, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if self.id is None:
+    #         ot_arma, objt = ObjetoTipo.objects.get_or_create(tipo_de_objeto='arma')
+    #         o, obj = Objeto.objects.get_or_create(objeto_tipo=ot_arma)
+    #         o.save()
+    #         self.objeto_tipo_id = o.id
+    #     super(Arma, self).save(*args, **kwargs)
 
 
 class Municao(models.Model):
