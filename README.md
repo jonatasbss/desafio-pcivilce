@@ -24,7 +24,7 @@ O desafio é baseado em uma diagrama EER, onde deveriamos fazer um relacionament
 ```bash
    pip install -r requirements.txt
 ```
-4. Criar banco de dados (Eu fiz a utilizando do postgres, mas você pode ficar a vontade para usar o banco que desejar).
+4. Criar banco de dados (Eu fiz a utilizando do postgresql, mas você pode ficar a vontade para usar o banco que desejar).
 
 ```bash
   python manage.py migrate
